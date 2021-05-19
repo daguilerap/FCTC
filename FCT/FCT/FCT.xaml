@@ -1,0 +1,132 @@
+﻿<Window x:Class="FCT.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FCT"
+        mc:Ignorable="d"
+        Title="GESTIÓN FCT" Height="700" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Menu Principal">
+                <Grid>
+                    <Label Content="GESTIÓN SAFA FCT" Margin="200,32,130,316" FontFamily="Tw Cen MT" FontSize="48" Foreground="#FF006A9A"/>
+                    <Image Margin="94,150,94,245" Stretch="Fill" Source="logo_safa.jpg"/>
+
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/fondo.jpg" />
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Gestión Empresas" Loaded="onLoad" >
+                <Grid >
+                    <Label Content="GESTIÓN DE LAS EMPRESAS" Margin="186,28,80,320" FontFamily="Tw Cen MT" FontSize="36" Foreground="#FF006A9A"/>
+                    <Label Content="Código Empresa" HorizontalAlignment="Left" Margin="31,119,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:Name="texto_codigo" HorizontalAlignment="Left" Margin="147,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="23" Background="White" BorderBrush="Black"/>
+                    <Label Content="Nombre Empresa" HorizontalAlignment="Left" Margin="25,160,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:Name="texto_nombre_empresa" HorizontalAlignment="Left" Margin="147,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" Height="23" Background="White" BorderBrush="Black"/>
+                    <Label Content="Localidad" HorizontalAlignment="Left" Margin="31,197,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:Name="texto_localidad" HorizontalAlignment="Left" Margin="132,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="23" Background="White" BorderBrush="Black"/>
+                    <Label Content="CIF" HorizontalAlignment="Left" Margin="287,160,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:Name="texto_CIF" HorizontalAlignment="Left" Margin="319,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="23" Background="White" BorderBrush="Black"/>
+                    <Label Content="CP" HorizontalAlignment="Left" Margin="287,197,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:Name="texto_CP" HorizontalAlignment="Left" Margin="319,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" Height="23" Background="White" BorderBrush="Black"/>
+                    <Label Content="Dirección" HorizontalAlignment="Left" Margin="502,163,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:Name="texto_direccion" HorizontalAlignment="Left" Margin="575,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Height="23" Background="White" BorderBrush="Black"/>
+                    <Label Content="Tipo de Jornada" HorizontalAlignment="Left" Margin="502,200,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <ComboBox x:Name="combobox_jornada" HorizontalAlignment="Left" Margin="618,204,0,0" VerticalAlignment="Top" Width="108">
+                        <ComboBoxItem>Parcial</ComboBoxItem>
+                        <ComboBoxItem>Completa</ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Nombre Resp." HorizontalAlignment="Left" Margin="25,241,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:Name="texto_nombre_resp" HorizontalAlignment="Left" Margin="132,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="23" Background="White" BorderBrush="Black"/>
+                    <Label Content="Nombre Tutor" HorizontalAlignment="Left" Margin="25,278,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:Name="texto_nombre_tutor" HorizontalAlignment="Left" Margin="132,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="23" Background="White" BorderBrush="Black"/>
+                    <Label Content="Apellido Resp." HorizontalAlignment="Left" Margin="270,241,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:Name="texto_apellido_resp" HorizontalAlignment="Left" Margin="369,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="23" Background="White" BorderBrush="Black"/>
+                    <Label Content="Apellido Tutor" HorizontalAlignment="Left" Margin="270,278,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:Name="texto_apellido_tutor" HorizontalAlignment="Left" Margin="369,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="23" Background="White" BorderBrush="Black"/>
+                    <Label Content="DNI Resp." HorizontalAlignment="Left" Margin="548,244,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:Name="texto_DNI_resp" HorizontalAlignment="Left" Margin="618,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Height="23" Background="White" BorderBrush="Black"/>
+                    <Label Content="DNI Tutor" HorizontalAlignment="Left" Margin="548,278,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:Name="texto_DNI_tutor" HorizontalAlignment="Left" Margin="618,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Height="23" Background="White" BorderBrush="Black"/>
+                    <Button x:Name="boton_insertar" Content="INSERTAR" HorizontalAlignment="Left" Margin="198,368,0,0" VerticalAlignment="Top" Background="#FFE4EFFA" Height="38" Width="110" FontFamily="Tw Cen MT" FontSize="16" BorderBrush="Black" Click="boton_insertar_Click"/>
+                    <Button x:Name="boton_modificar" Content="MODIFICAR" HorizontalAlignment="Center" Margin="0,368,0,0" VerticalAlignment="Top" Background="#FFE4EFFA" Height="38" Width="110" FontFamily="Tw Cen MT" FontSize="16" BorderBrush="Black" Click="boton_modificar_Click"/>
+                    <Button x:Name="boton_borrar" Content="BORRAR" HorizontalAlignment="Left" Margin="481,368,0,0" VerticalAlignment="Top" Background="#FFE4EFFA" Height="38" Width="110" FontFamily="Tw Cen MT" FontSize="16" BorderBrush="Black" Click="boton_borrar_Click"/>
+
+                    <Image Margin="31,8,651,542" Stretch="Fill" Source="/logo_safa2.png"/>
+                    <DataGrid x:Name="dv1" Margin="74,423,57,22"/>
+                    <Label Content="Email tutor" HorizontalAlignment="Left" Margin="25,316,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:Name="texto_email_tutor" HorizontalAlignment="Left" Margin="132,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="23" Background="White" BorderBrush="Black"/>
+                    <Label Content="Teléfono tutor" HorizontalAlignment="Left" Margin="270,315,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:Name="texto_tlf_tutor" HorizontalAlignment="Left" Margin="370,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="23" Background="White" BorderBrush="Black"/>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/fondo.jpg" />
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Asignación Alumnos">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="59*"/>
+                        <ColumnDefinition Width="338*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="ASIGNACIÓN DE ALUMNOS A EMPRESAS" Margin="86,33,43,398" FontFamily="Tw Cen MT" FontSize="36" Foreground="#FF006A9A" Grid.ColumnSpan="2"/>
+                    <Label Content="Elección de Alumno" HorizontalAlignment="Left" Margin="107,101,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Normal" Grid.Column="1"/>
+                    <Label Content="Elección de Empresa" HorizontalAlignment="Left" Margin="107,135,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Normal" Grid.Column="1"/>
+                    <Label Content="Elección de Tutor" HorizontalAlignment="Left" Margin="107,169,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Normal" Grid.Column="1"/>
+                    <ComboBox x:Name="combobox_alumno" HorizontalAlignment="Left" Margin="262,108,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <ComboBox x:Name="combobox_empresa" HorizontalAlignment="Left" Margin="262,142,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <ComboBox x:Name="combobox_tutor" HorizontalAlignment="Left" Margin="262,176,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <TextBox x:Name="texto_asignacion" HorizontalAlignment="Left" Margin="63,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="432" Height="120" BorderBrush="Black" Background="#FFF3F3F3" Grid.Column="1"/>
+                    <Button x:Name="boton_asignar" Content="ASIGNAR" HorizontalAlignment="Left" Margin="224,358,0,0" VerticalAlignment="Top" Background="#FFE4EFFA" Height="38" Width="110" FontFamily="Tw Cen MT" FontSize="16" BorderBrush="Black" Grid.Column="1" Click="boton_asignar_Click"/>
+
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/fondo.jpg" />
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Ficheros a Tabla">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="117*"/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="32*"/>
+                        <ColumnDefinition Width="638*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="ALUMNOS Y TUTORES A TABLA" Margin="4,31,118,528" FontFamily="Tw Cen MT" FontSize="36" Foreground="#FF006A9A" Grid.Column="3"/>
+                    <Label Content="Código alumno" HorizontalAlignment="Left" Margin="58,125,0,0" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="4"/>
+                    <Label Content="Fecha de nacimiento" HorizontalAlignment="Left" Margin="58,261,0,0" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="4"/>
+                    <Label Content="Apellidos Alumno" HorizontalAlignment="Left" Margin="58,227,0,0" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="4"/>
+                    <Label Content="Nombre Alumno" HorizontalAlignment="Left" Margin="58,193,0,0" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="4"/>
+                    <Label Content="DNI" HorizontalAlignment="Left" Margin="58,159,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:Name="texto_codigo_alumno" HorizontalAlignment="Left" Margin="44,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="23" Background="White" BorderBrush="Black" Grid.Column="3"/>
+                    <TextBox x:Name="texto_dni_alumno" HorizontalAlignment="Left" Margin="44,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="23" Background="White" BorderBrush="Black" Grid.Column="3"/>
+                    <TextBox x:Name="texto_nombre_alumno" HorizontalAlignment="Left" Margin="44,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="23" Background="White" BorderBrush="Black" Grid.Column="3"/>
+                    <TextBox x:Name="texto_apellidos_alumno" HorizontalAlignment="Left" Margin="44,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="23" Background="White" BorderBrush="Black" Grid.Column="3"/>
+                    <TextBox x:Name="texto_fechanacimiento_alumno" HorizontalAlignment="Left" Margin="44,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="23" Background="White" BorderBrush="Black" Grid.Column="3"/>
+                    <Label Content="Código tutor" HorizontalAlignment="Left" Margin="292,125,0,0" VerticalAlignment="Top" FontSize="14" Grid.Column="3"/>
+                    <Label Content="Teléfono" HorizontalAlignment="Left" Margin="292,227,0,0" VerticalAlignment="Top" FontSize="14" Grid.Column="3"/>
+                    <Label Content="Correo Electrónico" HorizontalAlignment="Left" Margin="292,193,0,0" VerticalAlignment="Top" FontSize="14" Grid.Column="3"/>
+                    <Label Content="Nombre y Apellido" HorizontalAlignment="Left" Margin="292,159,0,0" VerticalAlignment="Top" FontSize="14" Grid.Column="3"/>
+                    <TextBox x:Name="texto_codigo_tutor" HorizontalAlignment="Left" Margin="434,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="23" Background="White" BorderBrush="Black" Grid.Column="3"/>
+                    <TextBox x:Name="texto_nombreApel_tutor" HorizontalAlignment="Left" Margin="434,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="23" Background="White" BorderBrush="Black" Grid.Column="3"/>
+                    <TextBox x:Name="texto_correo_tutor" HorizontalAlignment="Left" Margin="434,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="23" Background="White" BorderBrush="Black" Grid.Column="3"/>
+                    <TextBox x:Name="texto_telefono_tutor" HorizontalAlignment="Left" Margin="434,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Height="23" Background="White" BorderBrush="Black" Grid.Column="3"/>
+                    <Button x:Name="boton_insertar_alumno" Content="INSERTAR" Margin="66,0,10,0" VerticalAlignment="Center" Background="#FFE4EFFA" Height="30" FontFamily="Tw Cen MT" FontSize="14" BorderBrush="Black" Click="boton_insertar_alumno1" Grid.ColumnSpan="3"/>
+                    <Button x:Name="boton_modificar_alumno" Content="MODIFICAR" HorizontalAlignment="Left" Margin="3,0,0,0" VerticalAlignment="Center" Background="#FFE4EFFA" Height="30" Width="80" FontFamily="Tw Cen MT" FontSize="14" BorderBrush="Black" Click="boton_modificar_alumno1" Grid.Column="3"/>
+                    <Button x:Name="boton_borrar_alumno" Content="BORRAR" HorizontalAlignment="Left" Margin="97,0,0,0" VerticalAlignment="Center" Background="#FFE4EFFA" Height="30" Width="80" FontFamily="Tw Cen MT" FontSize="14" BorderBrush="Black" Click="boton_borrar_alumno1" Grid.Column="3"/>
+                    <Button x:Name="boton_insertar_tutor" Content="INSERTAR" Margin="314,0,244,0" VerticalAlignment="Center" Background="#FFE4EFFA" Height="30" FontFamily="Tw Cen MT" FontSize="14" BorderBrush="Black" Click="boton_insertar_tutor1" Grid.Column="3"/>
+                    <Button x:Name="boton_modificar_tutor" Content="MODIFICAR" HorizontalAlignment="Left" Margin="394,0,0,0" VerticalAlignment="Center" Background="#FFE4EFFA" Height="30" Width="80" FontFamily="Tw Cen MT" FontSize="14" BorderBrush="Black" Click="boton_modificar_tutor1" Grid.Column="3"/>
+                    <Button x:Name="boton_borrar_tutor" Content="BORRAR" HorizontalAlignment="Left" Margin="488,0,0,0" VerticalAlignment="Center" Background="#FFE4EFFA" Height="30" Width="80" FontFamily="Tw Cen MT" FontSize="14" BorderBrush="Black" Click="boton_borrar_tutor1" Grid.Column="3"/>
+                    <DataGrid x:Name="dv1_alumno" Margin="27,377,450,33" Grid.ColumnSpan="4"/>
+                    <DataGrid x:Name="dv1_tutor" Margin="285,377,55,33" Grid.Column="3"/>
+
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/fondo.jpg" />
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
